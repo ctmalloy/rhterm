@@ -1,4 +1,4 @@
-# rhterm % *Robinhood Trading in Terminal*
+# rhterm ~ *Robinhood Trading in Terminal*
 
 ## Dependancies
   * Vorpal (https://github.com/dthree/vorpal)
