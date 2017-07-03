@@ -3,12 +3,30 @@
 
 // Dependencies
 const vorpal = require('vorpal')();
+import readline from 'readline';
+
+let rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 // Robinhood Credentials
 var credentials = {
     username: '',
     password: ''
 };
+
+rl.question("Username: ", (user) => {
+    rl.question('Password: ', (password) => {
+        credentials.username = user;
+        credentials.password = password;
+        rl.close()
+        // Initialize Vorpal
+        vorpal
+            .delimiter('rhterm %')
+            .show();
+    })
+})
 
 /* Commands
  *  investment_profile
@@ -35,12 +53,6 @@ var credentials = {
 
 // Connect Robinhood API
 var Robinhood = require('robinhood')(credentials, function(){
-
-    // Initialize Vorpal
-    vorpal
-        .delimiter('rhterm %')
-        .show(); 
-
     // investment_profile
     vorpal
         .command('profile', 'Outputs "rabbit"')

@@ -1,0 +1,33 @@
+{
+  "name": "rhterm",
+  "version": "1.0.0",
+  "description": "Robinhood Trading in Terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "presets": {
+ ["env"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctmalloy/rhterm.git"
+  },
+  "keywords": [
+    "robinhood",
+    "trading",
+    "node",
+    "js",
+    "vorpal",
+    "terminal"
+  ],
+  "author": "Conner Malloy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ctmalloy/rhterm/issues"
+  },
+  "homepage": "https://github.com/ctmalloy/rhterm#readme",
+  "dependencies": {
+    "robinhood": "^0.10.0"
+  }
+}
