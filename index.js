@@ -4,11 +4,8 @@
 // Dependencies
 const vorpal = require('vorpal')();
 import readline from 'readline';
-
-let rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+import figlet from 'figlet';
+import colors from 'colors';
 
 // Robinhood Credentials
 var credentials = {
@@ -16,17 +13,35 @@ var credentials = {
     password: ''
 };
 
-rl.question("Username: ", (user) => {
-    rl.question('Password: ', (password) => {
-        credentials.username = user;
-        credentials.password = password;
-        rl.close()
-        // Initialize Vorpal
-        vorpal
-            .delimiter('rhterm %')
-            .show();
-    })
-})
+let rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Header
+figlet.text('Robinhood Terminal', {
+    font: 'Digital',
+    horizontalLayout: 'default',
+    verticalLayout: 'default'
+}, (err, data) => {
+    if (err) {
+        console.log("Oops..");
+        console.dir(err);
+        return;
+    }
+    console.log(data.green);
+    rl.question("Username: ", (user) => {
+        rl.question('Password: ', (password) => {
+            credentials.username = user;
+            credentials.password = password;
+            rl.close();
+            // Initialize Vorpal
+            vorpal
+                .delimiter('rhterm %')
+                .show();
+        });
+    });
+});
 
 /* Commands
  *  investment_profile
