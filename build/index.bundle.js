@@ -16,6 +16,10 @@ var _colors = require('colors');
 
 var _colors2 = _interopRequireDefault(_colors);
 
+var _clear = require('clear');
+
+var _clear2 = _interopRequireDefault(_clear);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var vorpal = require('vorpal')();
@@ -33,6 +37,7 @@ var rl = _readline2.default.createInterface({
 });
 
 // Header
+(0, _clear2.default)();
 _figlet2.default.text('Robinhood Terminal', {
     font: 'Digital',
     horizontalLayout: 'default',

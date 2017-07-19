@@ -6,6 +6,7 @@ const vorpal = require('vorpal')();
 import readline from 'readline';
 import figlet from 'figlet';
 import colors from 'colors';
+import clear from 'clear';
 
 // Robinhood Credentials
 var credentials = {
@@ -19,6 +20,7 @@ let rl = readline.createInterface({
 });
 
 // Header
+clear();
 figlet.text('Robinhood Terminal', {
     font: 'Digital',
     horizontalLayout: 'default',
